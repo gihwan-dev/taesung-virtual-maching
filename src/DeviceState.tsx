@@ -26,7 +26,7 @@ const DeviceState = () => {
   };
 
   const getData = async () => {
-    const res = await fetch("https://taesung.azurewebsites.net/api/state/all", {
+    const res = await fetch("/api/state/all", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
