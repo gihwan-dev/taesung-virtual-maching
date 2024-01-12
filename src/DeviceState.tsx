@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FormControl, MenuItem, Select } from "@mui/material";
+import {
+  FormControl,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 import { socket } from "./sockets.io";
 
@@ -47,7 +52,7 @@ const DeviceState = () => {
     }
   }, [selected, data]);
 
-  const handleChange = (event: React.ChangeEvent) => {
+  const handleChange = (event: SelectChangeEvent<number>) => {
     const value = (event.target as HTMLInputElement).value;
     setSelected(parseInt(value));
   };
